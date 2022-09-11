@@ -1,0 +1,490 @@
+@import "global";
+@import "vars";
+
+.header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 60px;
+        align-items: center;
+        @include md-block () {
+            padding: 30px 30px 0;
+        }
+        @include sm-block () {
+            padding-top: 30px;
+        }
+    }
+
+    &-logo {
+        &__title {
+            font-size: 32px;
+            line-height: 1.1;
+            color: $pink;
+            margin-bottom: 10px;
+        }
+
+        &__text {
+            font-size: 13px;
+            line-height: 15px;
+            letter-spacing: 0.1em;
+            color: #fff;
+        }
+    }
+}
+
+.nav {
+    &-menu {
+        display: flex;
+        gap: 35px;
+        @include sm-block() {
+            display: none;
+        }
+
+        &__item-link {
+            font-size: 15px;
+            line-height: 1.6;
+            color: $gray;
+            font-family: $arial;
+        }
+        
+    }
+}
+
+.hero {
+    position: relative;
+    background-image: url(../assets/images/start-screen-gradient-background.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    @include md-block () {
+        height: auto;
+        min-height: auto;
+    }
+    @include sm-block () {
+        height: auto;
+        min-height: auto;
+    }
+    &-wrapper {
+        display: flex;
+        padding-top: 180px;
+        gap: 42px;
+        align-items: center;
+        @include md-block () {
+           flex-direction: column;
+           padding: 150px 154px 0;
+        }
+        @include sm-block () {
+            flex-direction: column;
+            padding: 150px 0 0 0;
+            gap: 105px;
+        }
+    }
+
+
+    &-title {
+        font-size: 44px;
+        line-height: 1.3;
+        color: #fff;
+        letter-spacing: 0;
+        max-width: 310px;
+        @include sm-block() {
+            font-size: 25px;
+            max-width: 190px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    &-text {
+        margin: 42px 0;
+        color: $gray;
+        @include md-block () {
+            max-width: 460px;
+        }
+        @include sm-block () {
+            text-align: center;
+        }
+        
+    }
+
+    &-img {
+        @include md-block () {
+            width: 569px;
+            height: 593px;
+            margin-left: 90px;
+        }
+        @include sm-block () {
+            width: 260px;
+            height: 272px;
+        }
+    }
+
+    &-btn {
+        @include md-block () {
+            display: block;
+            margin: 0 auto;
+        }
+        @include sm-block () {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    &-btn:hover {
+        background-color: #FDDCC4;
+    }
+}
+
+.info {
+    &-wrapper {
+        display: flex;
+        gap: 120px;
+        justify-content: center;
+        @include md-block () {
+            flex-direction: column-reverse;
+            padding: 0 169px;
+            gap: 80px;
+        }
+        @include sm-block () {
+            padding: 0;
+            flex-direction: column-reverse;
+            gap: 42px;
+        }
+    }
+
+    &-content {
+        display: flex;
+        gap: 25px;
+        flex-direction: column;
+        max-width: 430px;
+        margin-top: 14px;
+        @include sm-block () {
+            padding: 0 15px;
+        }
+        &__title {
+            color: $black-light;
+            max-width: 370px;
+            @include sm-block () {
+                max-width: 280px;
+                text-align: center;
+                margin: 0 auto;
+            }
+        &__text {
+            @include sm-block () {
+                max-width: 270px;
+            }
+        }
+        }
+    }
+
+    &-img {
+        @include md-block () {
+            width: 300px;
+            height: 408px;
+            margin: 0 65px;
+        }
+        @include sm-block () {
+            width: 280px;
+            height: 353px;
+            margin-left: 50px;
+        }
+    }
+}
+
+.friends {
+    background-color: $gray-light;
+
+    &-title {
+        max-width: 400px;
+        margin: 0 auto 60px;
+        text-align: center;
+        @include sm-block () {
+            margin: 0 auto 42px;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include sm-block () {
+            padding-bottom: 72px;
+            justify-content: center;
+            position: relative;
+        }
+    }
+
+    &-arrow {
+        border: 2px solid $pink;
+        border-radius: 100px;
+        padding: 23px 19px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        @include sm-block () {
+            position: absolute;
+            bottom: 0;
+        }
+        
+        &:hover {
+            background-color: $pink;
+        }
+    }
+
+    &-arrow__left {
+        @include sm-block () {
+            left: 90px;
+        }
+    }
+
+    &-arrow__right {
+        @include sm-block () {
+            right: 90px;
+        }
+    }
+
+    &-slider{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 90px;
+    }
+
+    &-item {
+        background-color: $white;
+        text-align: center;
+        border-radius: 9px;
+        padding-bottom: 30px;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background-color: #fff;
+             .friends-item__btn {
+                background-color: $pink;
+             }
+        }
+        @include md-block () {
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+        @include sm-block () {
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+        &__img {
+            border-radius: 9px;
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 23px;
+            margin: 30px 0;
+        }
+
+        &__btn {
+            border: 2px solid $pink;
+            background: transparent;
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    &-btn {
+        display: block;
+        margin: 60px auto 0;
+    }
+    &-btn:hover {
+        background-color: #FDDCC4;
+    }
+}
+
+.help {
+    &-title {
+        max-width: 318px;
+        text-align: center;
+        margin: 0 auto 60px;
+    }
+
+    &-items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 120px;
+        row-gap: 55px;
+        @include md-block () {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+        }
+        @include sm-block () {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+    }
+
+    &-item {
+        text-align: center;
+        &__img {
+            margin-bottom: 30px;
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 1.15;
+        }
+    }
+}
+
+.donation {
+    background-color: $gray-light;
+
+    &-wrapper {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        @include md-block () {
+            flex-direction: column-reverse;
+            gap: 60px;
+        }
+        @include sm-block () {
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
+    }
+
+    &-img {
+        @include sm-block () {
+            width: 260px;
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &-title {
+        max-width: 300px;
+        @include sm-block () {
+            text-align: center;
+            max-width: 210px;
+            margin-left: 30px;
+        }
+    }
+
+    &-subtitle {
+        font-size: 15px;
+        line-height: 1.1;
+        @include sm-block () {
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 273px;
+            margin-left: 10px;
+        }
+    }
+
+    &-btn {
+        width: 349px;
+        display: flex;
+        gap: 15px;
+        border-radius: 9px;
+        padding: 10px 15px;
+        @include sm-block () {
+            width: 281px;
+            gap: 10px;
+        }
+
+        span {
+            font-size: 20px;
+            line-height: 1.15;
+            @include sm-block () {
+                font-size: 15px;
+                line-height: 1.1;
+            }
+        }
+    }
+
+    &-text {
+        color: #b2b2b2;
+        font-size: 12px;
+        line-height: 18px;
+        font-style: italic;
+        max-width: 380px;
+        @include sm-block () {
+            max-width: 280px;
+            text-align: justify;
+        }
+    }
+}
+
+.footer {
+    background-image: url(../assets/images/footer-gradient-background.jpg);
+    padding-top: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include md-block () {
+        background-position: 30%;
+    }
+    @include sm-block () {
+        background-position: 30%;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include md-block () {
+            padding: 30px 64px 0;
+        }
+        @include sm-block () {
+            padding: 0;
+        }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &-title {
+        max-width: 288px;
+        color: #fff;
+        @include sm-block (){
+            text-align: center;
+            margin: 0 25px;
+        }
+    }
+
+    &-nav__menu-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        @include sm-block () {
+            margin-left: 40px;
+        }
+
+        a {
+            font-size: 20px;
+            line-height: 1.15;
+            color: $pink;
+            font-family: 'Georgia', sans-serif;
+            max-width: 260px;
+        }
+    }
+
+    &-img {
+        @include md-block () {
+            margin: 0 auto;
+            margin-top: 29px;
+        }
+    }
+}

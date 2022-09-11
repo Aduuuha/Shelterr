@@ -1,0 +1,211 @@
+@import "vars";
+@import "global";
+
+
+.header {
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 60px;
+        align-items: center;
+        padding-bottom: 50px;
+        @include md-block () {
+            padding: 46px 30px 50px;
+        }
+        @include sm-block () {
+            padding: 30px;
+        }
+    }
+
+    &-logo {
+        &__title {
+            font-size: 32px;
+            line-height: 1.1;
+            color: $pink;
+            margin-bottom: 10px;
+            color: $black-light;
+        }
+
+        &__text {
+            font-size: 13px;
+            line-height: 15px;
+            letter-spacing: 0.1em;
+            color: $black-dark;
+        }
+    }
+}
+
+.nav {
+    &-menu {
+        display: flex;
+        gap: 35px;
+
+        @include sm-block () {
+            display: none;
+        }
+
+        &__item-link {
+            font-size: 15px;
+            line-height: 1.6;
+            color: $black-light;
+            font-family: $arial;
+        }
+        
+    }
+}
+
+.nav-menu__item-link:hover {
+    border-bottom: 3px solid $pink;
+    transition: 0.3 ease-in-out;
+}
+
+.pets {
+    background-color: $gray-light;
+
+    &-title {
+        max-width: 400px;
+        margin: 0 auto 60px;
+        text-align: center;
+    }
+
+    &-wrapper {
+        display: flex;
+        gap: 60px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include md-block () {
+            margin: 0 94px;
+        }
+    }
+
+    &-box {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 40px;
+        row-gap: 30px;
+    }
+    &-item {
+        background-color: $white;
+        text-align: center;
+        border-radius: 9px;
+        padding-bottom: 30px;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background-color: #fff;
+             .pets-item__btn {
+                background-color: $pink;
+             }
+        }
+        @include md-block () {
+            &:nth-child(7) {
+                display: none;
+            }
+            &:nth-child(8) {
+                display: none;
+            }
+        }
+        @include sm-block () {
+            &:nth-child(4) {
+                display: none;
+            }
+            &:nth-child(5) {
+                display: none;
+            }
+            &:nth-child(6) {
+                display: none;
+            }
+            &:nth-child(7) {
+                display: none;
+            }
+            &:nth-child(8) {
+                display: none;
+            }
+        }
+        &__img {
+            border-radius: 9px;
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 23px;
+            margin: 30px 0;
+        }
+
+        &__btn {
+            border: 2px solid $pink;
+            background: transparent;
+            transition: 0.3s ease-in-out;
+        }
+    }
+    &-btns {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.footer {
+    background-image: url(../assets/images/footer-gradient-background.jpg);
+    padding-top: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include md-block () {
+        background-position: 30%;
+    }
+    @include sm-block () {
+        background-position: 30%;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include md-block () {
+            padding: 30px 64px 0;
+        }
+        @include sm-block () {
+            padding: 0;
+        }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &-title {
+        max-width: 288px;
+        color: #fff;
+        @include sm-block (){
+            text-align: center;
+            margin: 0 25px;
+        }
+    }
+
+    &-nav__menu-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        @include sm-block () {
+            margin-left: 40px;
+        }
+
+        a {
+            font-size: 20px;
+            line-height: 1.15;
+            color: $pink;
+            font-family: 'Georgia', sans-serif;
+            max-width: 260px;
+        }
+    }
+
+    &-img {
+        @include md-block () {
+            margin: 0 auto;
+            margin-top: 29px;
+        }
+    }
+}
